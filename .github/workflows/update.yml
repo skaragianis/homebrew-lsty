@@ -1,0 +1,38 @@
+# Commits made with the workflow token start no other workflow, so this
+# checks the new formula itself before it pushes.
+name: update
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency: update
+
+jobs:
+  update:
+    runs-on: macos-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - name: Point the formula at the latest release
+        id: update
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version="$(.github/update.sh)"
+          if git diff --quiet; then
+            echo "lsty $version is current"
+          else
+            echo "version=$version" >> "$GITHUB_OUTPUT"
+          fi
+      - if: steps.update.outputs.version
+        name: Commit, check and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -qam "lsty ${{ steps.update.outputs.version }}"
+          .github/check.sh
+          git push
