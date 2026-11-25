@@ -5,23 +5,23 @@ class Lsty < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/skaragianis/lsty/releases/download/v0.9.0/lsty-v0.9.0-aarch64-apple-darwin.tar.gz"
-      sha256 "12a858c010d9ff3bab1a379077b8d9112deeb73cf58cb5c3848bec896db29e96"
+      url "https://github.com/skaragianis/lsty/releases/download/v0.10.0/lsty-v0.10.0-aarch64-apple-darwin.tar.gz"
+      sha256 "43d43ad13372650f04716d45b5a3e2439d9de1cb9958b052725cd610d5c69b77"
     end
     on_intel do
-      url "https://github.com/skaragianis/lsty/releases/download/v0.9.0/lsty-v0.9.0-x86_64-apple-darwin.tar.gz"
-      sha256 "8afd3a1540e7efe916d155711d7176cfe028aefaaddb0d07bca2475790458637"
+      url "https://github.com/skaragianis/lsty/releases/download/v0.10.0/lsty-v0.10.0-x86_64-apple-darwin.tar.gz"
+      sha256 "2d8b8e59715ba7f269d4c32f427f41298caa887ecfd3c4c58c0f2c15c4430866"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/skaragianis/lsty/releases/download/v0.9.0/lsty-v0.9.0-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "7216b162597e6170a633d3c57523bcdd823dca49920f6b63124284e0409bfc4a"
+      url "https://github.com/skaragianis/lsty/releases/download/v0.10.0/lsty-v0.10.0-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "7c659175d7a6fc18ae6ebb7e2b54c99846aefe3e1cfe6a0e87ac032c8a8b43d1"
     end
     on_intel do
-      url "https://github.com/skaragianis/lsty/releases/download/v0.9.0/lsty-v0.9.0-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "49bed750c2291c02f71cd99eaa3e62e8a1ede33b248ca8ee4693c3148cee3809"
+      url "https://github.com/skaragianis/lsty/releases/download/v0.10.0/lsty-v0.10.0-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "210fd6d213ea43560211aa172570119bd2b5f69091e66d0b4eefabec42c2a4c8"
     end
   end
 
